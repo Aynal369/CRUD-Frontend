@@ -12,7 +12,7 @@ const UserList = () => {
   useEffect(() => {
     let isSubscribed = true;
     axios
-      .get("http://localhost:5000/app/v1/users")
+      .get("https://crud-backend-6tqntfvzo-aynal369.vercel.app/app/v1/users")
       .then((res) => {
         if (isSubscribed) {
         }
@@ -32,7 +32,9 @@ const UserList = () => {
     const proceed = window.confirm("Are you sure you want to delete");
     if (proceed) {
       axios
-        .delete(`http://localhost:5000/app/v1/users/${id}`)
+        .delete(
+          `https://crud-backend-6tqntfvzo-aynal369.vercel.app/app/v1/users/${id}`
+        )
         .then((res) => {
           if (res.data.data.deletedCount > 0) {
             toast.success("Successfully deleted one user");

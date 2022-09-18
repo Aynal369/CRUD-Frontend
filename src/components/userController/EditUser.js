@@ -12,7 +12,9 @@ const EditUser = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/app/v1/users/${id}`)
+      .get(
+        `https://crud-backend-6tqntfvzo-aynal369.vercel.app/app/v1/users/${id}`
+      )
       .then((res) => {
         setUsers(res.data.data);
       })
@@ -24,7 +26,10 @@ const EditUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/app/v1/users/${id}`, users)
+      .put(
+        `https://crud-backend-6tqntfvzo-aynal369.vercel.app/app/v1/users/${id}`,
+        users
+      )
       .then((res) => {
         if (res.data.data.modifiedCount > 0) {
           toast.success("Successfully updated user");

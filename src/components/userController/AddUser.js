@@ -23,7 +23,10 @@ const AddUser = () => {
       address,
     };
     axios
-      .post("http://localhost:5000/app/v1/users", newData)
+      .post(
+        "https://crud-backend-6tqntfvzo-aynal369.vercel.app/app/v1/users",
+        newData
+      )
       .then((res) => {
         if (res.data?.status === "success") {
           toast.success(`${res.data?.message}`);
